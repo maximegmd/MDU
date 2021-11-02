@@ -56,6 +56,25 @@
         let abi;
         
         function handleAccountsChanged(accounts){
+
+            window.ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [{
+                chainId: '',
+                chainName: 'Medusae',
+                nativeCurrency: {
+                    name: 'Medusae',
+                    symbol: 'MDU',
+                    decimals: 18
+                },
+                rpcUrls: ['http://37.187.251.101:8545/'],
+                blockExplorerUrls: ['']
+                }]
+                })
+                .catch((error) => {
+                console.log(error)
+            });
+
             console.log('Calling HandleChanged')
             
             if (accounts.length === 0) {
