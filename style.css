@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-body{
-    margin: 0;
-    padding: 0;
-}
 html, body {
     overflow-x: hidden;
     height: 100%;
@@ -10,8 +6,15 @@ html, body {
 body {
     padding: 0;
     margin: 0;
+    font-family: 'poppins';
+    background: linear-gradient(107.86deg, #5900FF 0%, #00A4FF 100%)no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: white;
 }
-.col-md-12 h2{
+.center h2{
+    display: block;
+    margin: auto 0;
     text-transform: uppercase;
     font-weight: 700;
     font-family: 'Poppins';
@@ -19,9 +22,9 @@ body {
 .header {
     display: block;
     margin: 0;
-    width: 60px;
+    width: 150px;
     box-shadow: none;
-    background-color: #313131;
+    background-color: #ffffff;
     height: 60px!important;
     overflow: hidden;
     z-index: 10;
@@ -54,7 +57,7 @@ body {
     margin-top: 0px;
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, #585858 100%, #000000 0%);
+    background: white;
     border-top-right-radius: 15px;
 }
 .sidebarMenuInner{
@@ -69,7 +72,7 @@ body {
     font-weight: bold;
     padding: 20px;
     cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    border-bottom: 2px solid rgba(153, 153, 153, 0.1);
 }
 .sidebarMenuInner li span{
     display: block;
@@ -78,7 +81,7 @@ body {
     
 }
 .sidebarMenuInner li a{
-    color: #fff;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
@@ -116,7 +119,7 @@ input[type=checkbox] {
     position: absolute;
     height: 3px;
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(0, 0, 0);
 }
 .horizontal {
     transition: all 0.3s;
@@ -155,3 +158,167 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transform: rotate(-135deg);
     margin-top: -9px;
 }
+.center{
+    justify-content: left;
+    text-align: left;
+    display: flex;
+    margin-left: 180px;
+}
+.center a{
+    transition: 0.5s;
+    text-decoration:none; 
+    color: rgb(255, 255, 255); 
+    font-family: 'poppins'; 
+    font-weight: 500;
+    margin-top: 10px;
+}
+.center a:hover{
+    text-decoration: underline;
+}
+.center button{
+    padding: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+}
+.center h1{
+    margin-top: 50px;
+    font-size: 40px;
+}
+button.btn{
+    width: 400px;
+    height: 79px;
+    background: rgba(255, 255, 255, 0.26);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    backdrop-filter: blur(7.456px);
+}
+.btnConnect{
+    background: rgb(18, 230, 11);
+    color: black;
+}
+.Connect{
+    font-family: 'poppins';
+    font-size: 35px;
+    margin-top: 12px;
+    margin-left: 80px;
+}
+.btn img{
+    position: absolute;
+    display: inline-block;
+    margin-left: -180px;
+    margin-top: -6px;
+}
+.install{
+    width: 294px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.269);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    backdrop-filter: blur(7.456px);
+    border-radius: 7px;
+}
+.Connect2{
+    font-family: 'poppins';
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.vector{
+    position: absolute;
+    left: 74.15%;
+    right: 1.15%;
+    top: 30.34%;
+    bottom: 6.98%;
+}
+.center p{
+    font-size: 18px;
+}
+.fuse{
+    position: absolute;
+    width: 504.88px;
+    height: 513.88px;
+    transform: rotate(-7.9deg);
+}
+.metamask{
+    position: absolute;
+    width: 60px;
+}
+.downloadicon{
+    width: 90px;
+    position: absolute;
+    margin-top: -10px;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+
+@media only screen and (max-width: 720px) {
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .center h1{
+            margin-left: -150px;
+            font-size: 20px;
+        }
+        .center p{
+            margin-left: -150px;
+            font-size: 15px;
+        }
+        button.btn{
+            position: absolute;
+            width: 200px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.26);
+            border: 1px solid #FFFFFF;
+            box-sizing: border-box;
+            backdrop-filter: blur(7.456px);
+            margin-left: -150px;
+        }
+        .Connect{
+            position: absolute;
+            font-family: 'poppins';
+            font-size: 20px;
+            top: 7px;
+            left: 185px;
+        }
+        .fuse{
+            position: absolute;
+            width: 244.88px;
+            height: 243.88px;
+            transform: rotate(-7.9deg);
+            margin-left: -170px;
+            margin-top: 30px;
+        }
+        .vector{
+            position: absolute;
+            left: 57.95%;
+            right: 1.15%;
+            top: 69.34%;
+            bottom: 0.98%;
+            width: 42%;
+        }
+        .metamask{
+            position: absolute;
+            top: 14px;
+            width: 30px;
+            left: 185px;
+        }
+        .install{
+            position: absolute;
+            width: 164px;
+            height: 60px;
+            top: 465px;
+            left: 30px;
+        }
+        .downloadicon{
+            visibility: hidden;
+        }
+        .Connect2{
+            position: absolute;
+            left: 160px;
+        }
+  }
