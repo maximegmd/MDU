@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.5/web3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/icon.ico" type="image/x-icon">
     
-    <title>Medusæ | Banque décentralisée du DirtyBiologistan</title>
+    <title>Banque décentralisée du DirtyBiologistan</title>
 
 </head>
 <body>
-    <div class="header"><img src="img/medusaeLogoPNG.png" style="width: 85%;margin-left: 25px;margin-top: 3px;"></div>
+    <div class="header"></div>
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
@@ -23,64 +22,50 @@
   </label>
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-      <li style="color: black;">Medusæ <span style="color: black;">Cryptomonney</span></li>
+      <li>Medusæ <span>Cryptomonney</span></li>
       <li><a href="https://docs.medusae.network/" target="_blank">Docs</a></li>
       <li><a href="https://explorer.medusae.network/" target="_blank">Explorer</a></li>
       <li><a href="https://discord.gg/9Zmn6YCGYs " target="_blank">Discord</a></li>
-      <li><a href="https://discord.gg/9Zmn6YCGYs " target="_blank">Le Bot Discord</a></li>
       <li><a href="https://www.youtube.com/watch?v=u26pw7i4fUE" target="_blank">Trailer</a></li>
       <li><a href="https://github.com/yamashi/MDU" target="_blank">GitHub</a></li>
-      <li><img src="img/medusaeLogoPNG.png"style="width:200px;"></li>
     </ul>
   </div>
     <!-- <style>
-        /* .meta-gray {
+        .meta-gray {
             -webkit-filter: grayscale(1);
         }
         .meta-normal {
             -webkit-filter: grayscale(0);
-        } */ -->
-    </style>
-    <div class="container" style="width: 100%;height: 40vh;display: inline;">
-        <div class="divCenter1" style="width: 50%;height: 50vh;">
-            <div class="row text-center">
-                <div class="center">
-                    <h1>Bienvenue sur Medusae</h1>
-                </div>            
-            </div>
-            <div class="row text-center">
-                <div class="center">
-                    <p>Le tout premier système de blockchain <br> opensource et écologique de la République <br> de DirtyBiology
-                    </p>
-                </div>
-            </div>
-            <div style="margin-top: 30px;" class="row text-center">
-                <div class="center">
-                    <button id="enableMetamask" class="btn"><img src="img/metamask.png"class="metamask"><p class="Connect">Connecter Metamask</p></button>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="center">
-                    <a href="https://metamask.io/download.html" target="_blank" class="install"><img src="img/download-icon.png" class="downloadicon"><p class="Connect2">Installer MetaMask</p></a>
-                </div>
-            </div>
-            <div class="row text-center1">
-                <div class="col-md-12">
-                    <span id="status"></span>
-                </div>
+        }
+    </style> -->
+    
+    <div class="container">
+        <div style="margin-top: 30px;" class="row text-center">
+            <div class="col-md-12">
+                <h2>Banque décentralisée du DirtyBiologistan</h2>
+            </div>            
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <img id="metaicon" src="img/medusaelogo.png" style="width: 50%;"/>
             </div>
         </div>
-        <div class="divCenter2"style="width: 49%; position: relative;margin-left:40%; top:-300px;">
-            <div class="row text-center">
-                <div class="center">
-                    <img id="metaicon" src="img/fusé.png"class="fuse"/>
-                </div>
+        <div style="margin-top: 30px;" class="row text-center">
+            <div class="col-md-12">
+                <a href="https://metamask.io/download.html" target="_blank">Installer MetaMask</a>
             </div>
         </div>
-        <div>
-            <img src="img/Vector.png" class="vector">
+        <div style="margin-top: 30px;" class="row text-center">
+            <div class="col-md-12">
+                <button id="enableMetamask" class="btn btn-primary">Lier MetaMask</button>
+            </div>
         </div>
-    </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <span id="status"></span>
+            </div>
+        </div>
+    </div>  
     <script>
         let currentAccount = null;
         let web3;
@@ -120,10 +105,8 @@
                     $('#enableMetamask').html(currentAccount)
                 }
             }
+            console.log('WalletAddress in HandleAccountChanged ='+currentAccount)
         }
-        const button = document.createElement('button');
-        button.className = 'btn';
-        button.id = 'enableMetamask';
 
         function connect() {
             console.log('Calling connect()')
@@ -134,8 +117,6 @@
             if (err.code === 4001) {
                 console.log('Please connect to MetaMask.');
                 $('#status').html('You refused to connect Metamask')
-                button.classList.remove("btn");
-                button.classList.add("btnConnect");
             } else {
                 console.error(err);
             }
@@ -150,31 +131,31 @@
             }
         }
     </script>
-    <script>   
-        $( document ).ready(function() {
-            m = detectMetaMask()
-            if(m) {
-                $('#metaicon').removeClass('meta-gray')
-                $('#metaicon').addClass('meta-normal')
-                $('#enableMetamask').attr('disabled',false)
-                // connect() // Make sure the connected wallet is being returned
-            } else {
-                $('#enableMetamask').attr('disabled',true)
-                $('#metaicon').removeClass('meta-normal')
-                $('#metaicon').addClass('meta-gray')
-            }
+<script>   
+    $( document ).ready(function() {
+        m = detectMetaMask()
+        if(m) {
+            $('#metaicon').removeClass('meta-gray')
+            $('#metaicon').addClass('meta-normal')
+            $('#enableMetamask').attr('disabled',false)
+            connect() // Make sure the connected wallet is being returned
+        } else {
+            $('#enableMetamask').attr('disabled',true)
+            $('#metaicon').removeClass('meta-normal')
+            $('#metaicon').addClass('meta-gray')
+        }
 
-            $('#enableMetamask').click(function() {
-                connect()
-            });
-            
-            try {            
-                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-            } catch (error) {
-                alert(error)
-            }        
-            // console.log('WalletAddress in HandleAccountChanged ='+currentAccount)    
-        })
-    </script>  
+        $('#enableMetamask').click(function() {
+            connect()
+        });
+        
+        try {            
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+        } catch (error) {
+            alert(error)
+        }            
+    })
+</script>  
 </body>
+<script src="main.js"></script>
 </html>
