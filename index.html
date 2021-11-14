@@ -91,16 +91,16 @@
             window.ethereum.request({
                 method: 'wallet_addEthereumChain',
                 params: [{
-                chainId: '0xB6F2',
-                chainName: 'Medusae',
-                nativeCurrency: {
-                    name: 'Medusae',
-                    symbol: 'MDU',
-                    decimals: 18
-                },
-                rpcUrls: ['https://rpc-01.medusae.network/'],
-                blockExplorerUrls: ['https://explorer.medusae.network/']
-                }]
+                    chainId: '0xB6F2',
+                    chainName: 'Medusae',
+                    nativeCurrency: {
+                        name: 'Medusae',
+                        symbol: 'MDU',
+                        decimals: 18
+                    },
+                    rpcUrls: ['https://rpc-01.medusae.network/'],
+                    blockExplorerUrls: ['https://explorer.medusae.network/']
+                    }]
                 })
                 .catch((error) => {
                 console.log(error)
@@ -118,6 +118,20 @@
                 
                 if(currentAccount != null) {
                     $('#enableMetamask').html(currentAccount)
+                    window.ethereum.request({
+                        method: 'wallet_watchAsset',
+                        params: {
+                            type: 'ERC20',
+                            options: {
+                                address: '0x71AA785770a250f71C4668D40B353496B2C973b8',
+                                symbol: 'MDUC',
+                                decimals: 18,
+                                image: 'https://cdn.discordapp.com/attachments/905440471302684753/907712105954816030/unknown.png',
+                            },
+                        },
+                    })                    .catch((error) => {
+                        console.log(error)
+                    });
                 }
             }
         }
